@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="buyer">
+      <h2>{{buyer.make}} {{buyer.model}} {{buyer.trim}}</h2>
+      <h3>Color: {{buyer.color}}</h3>
+      <h3>Milage: {{buyer.milage}}</h3>
+      <img src="{{buyer.img_url}}" alt="Picture of {{buyer.model}}"/>
+  </div>
+  <p>
+    <a href="/buyer/{{buyer.id}}/edit"> Edit {{buyer.model}} </a>
+  </p>
+  <form action="/buyer/{{buyer.id}}/delete" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Delete {{buyer.model}}">
+  </form>
+{% endblock %}

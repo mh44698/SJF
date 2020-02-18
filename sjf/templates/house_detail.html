@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="house">
+      <h2>{{house.make}} {{house.model}} {{house.trim}}</h2>
+      <h3>Color: {{house.color}}</h3>
+      <h3>Milage: {{house.milage}}</h3>
+      <img src="{{house.img_url}}" alt="Picture of {{house.model}}"/>
+  </div>
+  <p>
+    <a href="/house/{{house.id}}/edit"> Edit {{house.model}} </a>
+  </p>
+  <form action="/house/{{house.id}}/delete" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Delete {{house.model}}">
+  </form>
+{% endblock %}

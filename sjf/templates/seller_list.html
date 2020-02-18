@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <h1> Sellers </h1>
+  {% for seller in sellers %}
+    <div class="seller">
+      <h2><a href="/seller/{{seller.id}}">{{seller.name}}</a></h2>
+      <img src="{{seller.web_site}}" alt="Picture of {{seller.name}}"/>
+    </div>
+  {% endfor %}
+{% endblock %}

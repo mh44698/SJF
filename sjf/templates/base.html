@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>We Buy/Sell/Rent Houses</title>
+</head>
+<body>
+  <nav>
+    <h1>Welcome to SJF Homes LLC</h1>
+    <h2>
+      <a href="/buyer"> View buyers</a> | <a href="/seller"> View Sellers </a> | <a href="/seller/new"> You want to sell with us? </a> | <a href="/buyer/new"> Listing a buyer? </a></h2>
+  </nav>
+
+
+  {% block content %}
+  {% endblock %}

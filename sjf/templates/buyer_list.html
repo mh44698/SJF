@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1> Buyers </h1>
+  {% for buyer in buyers %}
+    <div class="buyer">
+      <h2><a href="/buyer/{{buyer.id}}">{{buyer.model}}</a></h2>
+      <img src="{{buyer.img_url}}" alt="Picture of {{buyer.model}}"/><br>
+      {{ buyer.milage }}
+    
+    </div>
+    <!-- <form action="/buyer/{{buyer.id}}/delete" method="POST"></form>
+      {% csrf_token %}
+      <input type="submit" value="Delete {{buyer.model}}"> -->
+    </form>
+  {% endfor %}
+{% endblock %}

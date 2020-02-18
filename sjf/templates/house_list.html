@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1> Houses </h1>
+  {% for house in houses %}
+    <div class="house">
+      <h2><a href="/house/{{house.id}}">{{house.model}}</a></h2>
+      <img src="{{house.img_url}}" alt="Picture of {{house.model}}"/><br>
+      {{ house.milage }}
+    
+    </div>
+    <!-- <form action="/house/{{house.id}}/delete" method="POST"></form>
+      {% csrf_token %}
+      <input type="submit" value="Delete {{house.model}}"> -->
+    </form>
+  {% endfor %}
+{% endblock %}
