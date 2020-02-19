@@ -1,1 +1,1 @@
-web: gunicorn sjf.wsgi --log-file -
+web: gunicorn sjf_django.wsgi --log-file -
