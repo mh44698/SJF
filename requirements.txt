@@ -34,3 +34,4 @@ virtualenv-clone==0.5.3
 wcwidth==0.1.7
 whitenoise==5.0.1
 wrapt==1.11.2
+gunicorn==20.0.4
