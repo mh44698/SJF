@@ -4,14 +4,28 @@
   <h1> Houses </h1>
   {% for house in houses %}
     <div class="house">
-      <h2><a href="/house/{{house.id}}">{{house.model}}</a></h2>
-      <img src="{{house.img_url}}" alt="Picture of {{house.model}}"/><br>
-      {{ house.milage }}
+      <h2><a href="/house/{{house.id}}">{{house.address}}</a></h2>
+    
+
+      <h4>{{house.city}},  {{house.state}}</h4>
+
+
     
     </div>
-    <!-- <form action="/house/{{house.id}}/delete" method="POST"></form>
-      {% csrf_token %}
-      <input type="submit" value="Delete {{house.model}}"> -->
     </form>
   {% endfor %}
 {% endblock %}
+
+<!-- class House(models.Model):
+  address = models.CharField(default='', max_length=200)
+  city = models.CharField(default = '', max_length= 100)
+  state = models.CharField(default = '', max_length= 2)
+  bedrooms = models.CharField(default = '', max_length= 2)
+  baths = models.CharField(default = '', max_length= 2)
+  garage = models.CharField(default = '', max_length= 3)
+  basement = models.CharField(default = '', max_length= 3)
+  ac = models.CharField(default = '', max_length= 3)
+  forcedheat = models.CharField(default = '', max_length= 3)
+  currentrent = models.CharField(default = '', max_length= 10)
+  rented = models.CharField(default = '', max_length= 10)
+  img_url = models.ImageField(upload_to = 'pic_folder/', default = 'pic_folder/None/no-img.jpg') -->

@@ -6,7 +6,17 @@
   {% for seller in sellers %}
     <div class="seller">
       <h2><a href="/seller/{{seller.id}}">{{seller.name}}</a></h2>
-      <img src="{{seller.web_site}}" alt="Picture of {{seller.name}}"/>
-    </div>
+      <p>{{seller.phone}}</p>
+      <p>{{seller.address}}</p>
+      <p>{{seller.distressed}}</p>
+      <!-- <img src="{{seller.web_site}}" alt="Picture of {{seller.name}}"/> -->
+    </div><hr>
   {% endfor %}
 {% endblock %}
+
+<!-- 
+class Seller(models.Model):
+    name = models.CharField(default='', max_length=200)
+    phone = models.CharField(default='', max_length=20)
+    address = models.CharField(default='', max_length=400)
+    distressed = models.CharField(default = '', max_length= 200) -->

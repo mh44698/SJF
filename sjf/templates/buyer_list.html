@@ -4,14 +4,21 @@
   <h1> Buyers </h1>
   {% for buyer in buyers %}
     <div class="buyer">
-      <h2><a href="/buyer/{{buyer.id}}">{{buyer.model}}</a></h2>
-      <img src="{{buyer.img_url}}" alt="Picture of {{buyer.model}}"/><br>
-      {{ buyer.milage }}
-    
+      <h2><a href="/buyer/{{buyer.id}}">{{buyer.name}}</a>
+      </h2>
+      <p>{{buyer.phone}}</p>
+      <p>{{buyer.email}}</p>
     </div>
-    <!-- <form action="/buyer/{{buyer.id}}/delete" method="POST"></form>
-      {% csrf_token %}
-      <input type="submit" value="Delete {{buyer.model}}"> -->
+    <hr>
     </form>
   {% endfor %}
 {% endblock %}
+
+
+<!-- class Buyer(models.Model):
+    name=models.CharField(default='', max_length=100)
+    phone=models.CharField(default='', max_length= 100)
+    email= models.CharField(default = '', max_length= 100)
+    company= models.CharField(default = '', max_length= 100)
+    specifications= models.CharField(default = '', max_length= 100)
+    -->

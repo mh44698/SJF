@@ -2,11 +2,13 @@
 
 {% block content %}
   <div class="house">
-      <h2>{{house.make}} {{house.model}} {{house.trim}}</h2>
-      <h3>Color: {{house.color}}</h3>
-      <h3>Milage: {{house.milage}}</h3>
-      <img src="{{house.img_url}}" alt="Picture of {{house.model}}"/>
+      <!-- <h2>{{house.make}} {{house.model}} {{house.trim}}</h2> -->
+      <h3>Address: {{house.address}}</h3>
+      <h3>City: {{house.city}}</h3>
+      <h3>State: {{house.state}}</h3>
   </div>
+        <img src="{{house.img_url}}" alt="Picture of {{house.address}}"/><br>
+     
   <p>
     <a href="/house/{{house.id}}/edit"> Edit {{house.model}} </a>
   </p>
@@ -14,4 +16,21 @@
     {% csrf_token %}
     <input type="submit" value="Delete {{house.model}}">
   </form>
+  <hr></hr>
 {% endblock %}
+
+
+<!-- 
+class House(models.Model):
+    address = models.CharField(default='', max_length=200)
+    city = models.CharField(default = '', max_length= 100)
+    state = models.CharField(default = '', max_length= 2)
+    bedrooms = models.CharField(default = '', max_length= 2)
+    baths = models.CharField(default = '', max_length= 2)
+    garage = models.CharField(default = '', max_length= 3)
+    basement = models.CharField(default = '', max_length= 3)
+    ac = models.CharField(default = '', max_length= 3)
+    forcedheat = models.CharField(default = '', max_length= 3)
+    currentrent = models.CharField(default = '', max_length= 10)
+    rented = models.CharField(default = '', max_length= 10)
+    img_url = models.ImageField(upload_to = 'pic_folder/', default = 'pic_folder/None/no-img.jpg') -->

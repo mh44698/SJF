@@ -4,15 +4,17 @@
 
   <div>
    
-    <span>{{ seller.name }}<img src="{{seller.logo}}" alt="logo of {{seller.name}}"/></span>
+    
+    <!-- <img src="{{seller.logo}}" alt="logo of {{seller.name}}"/>  -->
+    <h1>{{seller.name}}</h1>
     <p>{{seller.address}}</p>
     <p>{{seller.phone}}</p>
-    <a href="{{ seller.web_site }}">Lujack.com</a>
+    <p>{{seller.distressed}}</p>
     <br>
     <br>
     
     {% for car in seller.car.all %}
-    <h2><a href="/car/{{car.id}}">{{car.model}}</a></h2>
+    <!-- <h2><a href="/seller/{{seller.id}}">{{seller.name}}</a></h2> -->
     {% endfor %}
     <footer>
       <a href="/seller/{{seller.id}}/edit"> Edit {{seller.name}} </a>
@@ -23,3 +25,10 @@
     </footer>
   </div>
 {% endblock %}
+
+<!-- 
+class Seller(models.Model):
+    name = models.CharField(default='', max_length=200)
+    phone = models.CharField(default='', max_length=20)
+    address = models.CharField(default='', max_length=400)
+    distressed = models.CharField(default = '', max_length= 200) -->

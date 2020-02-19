@@ -27,13 +27,14 @@ form {
 }
 h1 {
   font-size: 36px;
+  color: red;
 }
 
 h2 {
   font-size: 22px;
 }
 
-.car {
+.house {
   display: inline-block;
   background-color: #D8AE48;
   width: 350px;

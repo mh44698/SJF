@@ -3,10 +3,11 @@
 {% block content %}
   <div class="buyer">
       <h2>{{buyer.make}} {{buyer.model}} {{buyer.trim}}</h2>
-      <h3>Color: {{buyer.color}}</h3>
-      <h3>Milage: {{buyer.milage}}</h3>
-      <img src="{{buyer.img_url}}" alt="Picture of {{buyer.model}}"/>
+      <h3>Company Name: {{buyer.name}}</h3>
+      <h3>Phone Number: {{buyer.phone}}</h3>
+      <h3>Email: {{buyer.email}}</h3>
   </div>
+  
   <p>
     <a href="/buyer/{{buyer.id}}/edit"> Edit {{buyer.model}} </a>
   </p>
@@ -14,4 +15,12 @@
     {% csrf_token %}
     <input type="submit" value="Delete {{buyer.model}}">
   </form>
+  <hr></hr>
 {% endblock %}
+
+<!-- class Buyer(models.Model):
+    name=models.CharField(default='', max_length=100)
+    phone=models.CharField(default='', max_length= 100)
+    email= models.CharField(default = '', max_length= 100)
+    company= models.CharField(default = '', max_length= 100)
+    specifications= models.CharField(default = '', max_length= 100) -->
