@@ -1,7 +1,7 @@
 from django.db import models
 
 class Seller(models.Model):
-    name = models.CharField(default='', max_length=200)
+    name = models.CharField(default='Owners Name', max_length=200)
     phone = models.CharField(default='', max_length=20)
     address = models.CharField(default='', max_length=400)
     distressed = models.CharField(default = '', max_length= 200)
@@ -18,7 +18,7 @@ class House(models.Model):
     forcedheat = models.CharField(default = '', max_length= 3)
     currentrent = models.CharField(default = '', max_length= 10)
     rented = models.CharField(default = '', max_length= 10)
-    img_url = models.ImageField(upload_to = 'pic_folder/', default = 'pic_folder/None/no-img.jpg')
+    img_url = models.ImageField(upload_to = 'pic_folder', blank=True)
 
 class Buyer(models.Model):
     name=models.CharField(default='', max_length=100)
