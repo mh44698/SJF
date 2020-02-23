@@ -27,5 +27,11 @@ class Buyer(models.Model):
     company= models.CharField(default = 'Buyers-Company Name', max_length= 100)
     specifications= models.CharField(default = 'What are they looking for', max_length= 400)
    
+#####Cloudinary insert
+from cloudinary.models import CloudinaryField
+
+class Photo(models.Model):
+    image = CloudinaryField('image')
+####### Cloudinary insert - end
     def __str__(self):
         return self.name

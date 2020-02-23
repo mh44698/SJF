@@ -43,13 +43,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sjf',
-    'whitenoise.runserver_nostatic',
     
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -148,3 +146,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static' 'media')
 
 STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'staticfiles')
+#########
+
+#### Cloudinary Data
+#CLOUDINARY_URL=cloudinary://122446843951794:AFecUFnRtIbSUHowGJawbiZbBZY@dv0e45aqb
