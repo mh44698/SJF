@@ -138,15 +138,17 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-PROJECT_ROOT   =   os.path.join(os.path.abspath(__file__))
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
-)
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static' 'media')
 
-STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'staticfiles')
-#########
+#############Uncommit
+# PROJECT_ROOT   =   os.path.join(os.path.abspath(__file__))
+# STATICFILES_DIRS = (
+#     os.path.join(PROJECT_ROOT, 'static'),
+# )
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'static' 'media')
+
+# STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'staticfiles')
+######### Re commit
 
 #### Cloudinary Data
 #CLOUDINARY_URL=cloudinary://122446843951794:AFecUFnRtIbSUHowGJawbiZbBZY@dv0e45aqb
