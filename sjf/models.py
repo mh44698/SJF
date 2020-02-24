@@ -1,4 +1,6 @@
 from django.db import models
+from PIL import Image
+import os
 
 class Seller(models.Model):
     name = models.CharField(default='Owners Name', max_length=200)
@@ -28,10 +30,21 @@ class Buyer(models.Model):
     specifications= models.CharField(default = 'What are they looking for', max_length= 400)
    
 #####Cloudinary insert
-from cloudinary.models import CloudinaryField
+# from cloudinary.models import CloudinaryField
 
-class Photo(models.Model):
-    image = CloudinaryField('image')
+# class Photo(models.Model):
+#     image = CloudinaryField('image')
 ####### Cloudinary insert - end
+
+######  Image from Pillow
+# class image(models.Model):
+#     im = Image.open("static/710.jpeg")
+#     im.rotate(45).show()
+
+# models.py 
+# class Hotel(models.Model): 
+#     name = models.CharField(max_length=50)  
+#     hotel_Main_Img = models.ImageField(upload_to='images/') 
+
     def __str__(self):
         return self.name

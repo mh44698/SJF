@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+
+
+
+
 {% block content %}
   <h1> Buyers </h1>
   {% for buyer in buyers %}
@@ -8,6 +12,7 @@
       </h2>
       <p>{{buyer.phone}}</p>
       <p>{{buyer.email}}</p>
+      <p>{{ im }}</p>
     </div>
     <hr>
     </form>

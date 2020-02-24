@@ -1,5 +1,5 @@
 from django import forms
-from .models import House, Seller, Buyer
+from .models import *
 
 class SellerForm(forms.ModelForm):
 
@@ -22,4 +22,10 @@ class BuyerForm(forms.ModelForm):
     class Meta:
         model = Buyer
         fields = ('name', 'phone', 'email', 'company','specifications')
+
+# class HotelForm(forms.ModelForm): 
+  
+#     class Meta: 
+#         model = Hotel 
+#         fields = ['name', 'hotel_Main_Img']
 

@@ -3,6 +3,7 @@ from . import views
 from django.conf.urls.static import static
 from django.conf import settings
 
+
 urlpatterns = [
     path('', views.seller_list),
     path('seller/', views.seller_list, name = 'seller_list'),
@@ -23,9 +24,7 @@ urlpatterns = [
     path('buyer/new', views.buyer_create, name = 'buyer_create'),
     path('buyer/<int:id>/edit', views.buyer_update, name = 'buyer_edit'),
     path('buyer/<int:id>/delete', views.buyer_delete, name = 'buyer_delete'),
-]
-
-#urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
 # from django.conf import settings

@@ -7,14 +7,17 @@
       <h2><a href="/house/{{house.id}}">{{house.address}}</a></h2>
     
 
-      <h4>{{house.city}},  {{house.state}}</h4>
-        CloudinaryImage("samples/ecommerce/leather-bag-gray.jpg").image()
-{comment}
-    <!-- {% if house.img_url %}<img src="{{ house.img_url }}" alt="{{ house.address }}" width="30%"> -->
+      <h4>{{house.city}},  {{house.state}}<br>
+        Pic Goes Here,{{image.im}}
+
+
+        
+        <div style="background-image: url({{product.img.url}}); width: 30vmin; height:30vmin;">
       
-  <!-- {% endif %} -->
-{endcomment}
-    
+      
+      </h4>
+
+    <hr>
     </div>
     </form>
   {% endfor %}
