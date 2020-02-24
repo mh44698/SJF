@@ -7,13 +7,11 @@
       <h2><a href="/house/{{house.id}}">{{house.address}}</a></h2>
     
 
-      <h4>{{house.city}},  {{house.state}}<br>
-        Pic Goes Here,
-       {{ house.im }}
-
+      <h4>{{house.city}},  {{house.state}}<br>       
         
-        <div style="background-image: url({{ house.im}}); width: 30vmin; height:30vmin;">
-      <img src="https://sjfhomes.s3.us-east-2.amazonaws.com/1114+grant.jpeg" alt="house">
+         {% if house.img_url %}
+            <img src="{{ house.img_url.url }}" alt="{{ house.address }}" width="30%">
+          {% endif %}
       
       </h4>
 
@@ -36,3 +34,6 @@
   currentrent = models.CharField(default = '', max_length= 10)
   rented = models.CharField(default = '', max_length= 10)
   img_url = models.ImageField(upload_to = 'pic_folder/', default = 'pic_folder/None/no-img.jpg') -->
+
+
+<!-- <img src="https://sjfhomes.s3.us-east-2.amazonaws.com/1114+grant.jpeg" alt="house"> -->

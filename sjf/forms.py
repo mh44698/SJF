@@ -13,8 +13,8 @@ class HouseForm(forms.ModelForm):
         model = House
         fields = ('address', 'city', 'state','bedrooms', 'baths', 'garage', 'basement', 'ac', 'forcedheat', 'currentrent', 'rented','img_url')
 
-class ImageUploadForm(forms.Form):
-       image = ('img_url')
+# class ImageUploadForm(forms.Form):
+#        image = ('img_url')
 
 
 class BuyerForm(forms.ModelForm):

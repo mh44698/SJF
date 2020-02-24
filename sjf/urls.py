@@ -17,7 +17,7 @@ urlpatterns = [
     path('house/new', views.house_create, name = 'house_create'),
     path('house/<int:id>/edit', views.house_update, name = 'house_edit'),
     path('house/<int:id>/delete', views.house_delete, name = 'house_delete'),
-    path('upload/', views.upload_pic, name = 'upload_pic'),
+    
 
     path('buyer/', views.buyer_list, name = 'buyer_list'),
     path('buyer/<int:id>', views.buyer_detail, name = 'buyer_detail'),

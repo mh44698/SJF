@@ -14,6 +14,13 @@ import os
 #import django_heroku
 ###
 
+#############################  AWS EDIT #########################
+# local
+#from key import AWS_KEY, AWS_SECRET
+#heroku
+AWS_KEY = os.environ['AWS_KEY']
+AWS_SECRET = os.environ['AWS_SECRET']
+#############################  AWS EDIT #########################
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -44,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
     'sjf',
 ]
 
@@ -55,9 +63,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'sjf_django.urls'
 
@@ -129,35 +137,30 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-# STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
-# STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR,'static')
-# MEDIA_URL ='/media/'
-# MEDIA_ROOT=os.path.join(BASE_DIR, 'static', 'media')
-# django_heroku.settings(locals())
 
-
-
-
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-
-# #############Uncommit
 STATIC_URL = '/static/'
 
 PROJECT_ROOT   =   os.path.join(os.path.abspath(__file__))
+STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'staticfiles')
 
 STATICFILES_DIRS = (
      os.path.join(PROJECT_ROOT, 'static'),
  )
 
-MEDIA_ROOT =  os.path.join(BASE_DIR, 'media') 
-
+#MEDIA_ROOT =  os.path.join(BASE_DIR, 'media') 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static' 'media')
 MEDIA_URL = '/media/'
 
-STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'staticfiles')
 
-######### Re commit
 
-#### Cloudinary Data
-#CLOUDINARY_URL=cloudinary://122446843951794:AFecUFnRtIbSUHowGJawbiZbBZY@dv0e45aqb
+
+################################  AWS 
+# s3 bucket
+AWS_ACCESS_KEY_ID = AWS_KEY
+AWS_SECRET_ACCESS_KEY = AWS_SECRET
+AWS_STORAGE_BUCKET_NAME= 'sjfhomes'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_S3_REGION_NAME = 'eu-west-2'
+################################  AWS 

@@ -84,7 +84,8 @@ def house_detail(request, id):
 
 def house_create(request):
     if request.method == 'POST':
-        form = HouseForm(request.POST)
+        #import pdb; pdb.set_trace()
+        form = HouseForm(request.POST, request.FILES)
         if form.is_valid:
             house = form.save()
             return redirect('house_detail', id = house.id)
@@ -95,7 +96,7 @@ def house_create(request):
 def house_update(request, id):
     house = House.objects.get(id = id)
     if request.method == 'POST':
-        form = HouseForm(request.POST, instance = house)
+        form = HouseForm(request.POST, request.FILES, instance = house)
         if form.is_valid:
             house = form.save()
             return redirect('house_detail', id = house.id)
@@ -108,29 +109,19 @@ def house_delete(request, id):
     House.objects.get(id = id).delete()
     return redirect('house_list')
 
-def upload_pic(request):
-    if request.method == 'POST':
-        form = ImageUploadForm(request.POST, request.FILES)
-        if form.is_valid:
-            # buyer = Buyer.objects.get(id=id)
-            buyer.img_url = form.cleaned_data['image']
-            buyer=form.save()
-            # return redirect('buyer_detail', id = buyer.id)
-            return HttpResponse('image upload success')
-    return HttpResponseForbidden('allowed only via POST')
+
 
 # Create your views here. 
-def hotel_image_view(request): 
-  
-    if request.method == 'POST': 
-        form = HotelForm(request.POST, request.FILES) 
-  
-        if form.is_valid(): 
-            form.save() 
-            return redirect('success') 
-    else: 
-        form = HotelForm() 
-    return render(request, 'hotel_image_form.html', {'form' : form}) 
+# def camp_create(request):
+#     if request.method == 'POST':
+#         # add request.FILES to get images to show up
+#         form = CampForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             camp = form.save()
+#             return redirect('camp_detail', pk=camp.pk)
+#     else:
+#         form = CampForm()
+#     return render(request, 'camp/camp_form.html', {'form': form})
   
   
 def success(request): 
