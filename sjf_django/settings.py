@@ -16,10 +16,10 @@ import os
 
 #############################  AWS EDIT #########################
 # local
-from key import AWS_KEY, AWS_SECRET
+#from key import AWS_KEY, AWS_SECRET
 #heroku
-#AWS_KEY = os.environ['AWS_KEY']
-#AWS_SECRET = os.environ['AWS_SECRET']
+AWS_KEY = os.environ['AWS_KEY']
+AWS_SECRET = os.environ['AWS_SECRET']
 #############################  AWS EDIT #########################
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -163,4 +163,5 @@ AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 #AWS_S3_REGION_NAME = 'eu-west-2'
+AWS_S3_SIGNATURE_VERSION = 's3v4'
 ################################  AWS 
