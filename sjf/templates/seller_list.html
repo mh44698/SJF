@@ -6,9 +6,9 @@
   {% for seller in sellers %}
     <div class="seller">
       <h2><a href="/seller/{{seller.id}}">{{seller.name}}</a></h2>
-      <p>{{seller.phone}}</p>
-      <p>{{seller.address}}</p>
-      <p>{{seller.distressed}}</p>
+      <p><b>Phone:</b>       {{seller.phone}}</p>
+      <p><b>Address:</b>     {{seller.address}}</p>
+      <p><b>Distressed:</b>  {{seller.distressed}}</p>
       <!-- <img src="{{seller.web_site}}" alt="Picture of {{seller.name}}"/> -->
     </div><hr>
   {% endfor %}

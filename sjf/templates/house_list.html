@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1> Houses </h1>
+  <h1> Rentals </h1>
   {% for house in houses %}
     <div class="house">
       <h2><a href="/house/{{house.id}}">{{house.address}}</a></h2>
