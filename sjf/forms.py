@@ -11,7 +11,7 @@ class HouseForm(forms.ModelForm):
 
     class Meta:
         model = House
-        fields = ('address', 'city', 'state','bedrooms', 'baths', 'garage', 'basement', 'ac', 'forcedheat', 'currentrent', 'rented','house_photo')
+        fields = ('address', 'city', 'state','bedrooms', 'baths', 'garage', 'basement', 'ac', 'forcedheat', 'currentrent', 'rented','img_url')
 
 class ImageUploadForm(forms.Form):
        image = ('img_url')

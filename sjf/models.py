@@ -21,7 +21,7 @@ class House(models.Model):
     currentrent = models.CharField(default = '', max_length= 10)
     rented = models.CharField(default = '', max_length= 10)
     img_url = models.ImageField(upload_to='images/', null=True, blank=True)
-    house_photo = models.TextField()
+    
 
 class Buyer(models.Model):
     name=models.CharField(default='Buyers Name', max_length=100)
