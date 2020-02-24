@@ -21,6 +21,7 @@ class House(models.Model):
     currentrent = models.CharField(default = '', max_length= 10)
     rented = models.CharField(default = '', max_length= 10)
     img_url = models.ImageField(upload_to='images/', null=True, blank=True)
+    house_photo = models.TextField()
 
 class Buyer(models.Model):
     name=models.CharField(default='Buyers Name', max_length=100)
@@ -36,7 +37,7 @@ class Buyer(models.Model):
 #     image = CloudinaryField('image')
 ####### Cloudinary insert - end
 
-######  Image from Pillow
+#####  Image from Pillow
 # class image(models.Model):
 #     im = Image.open("static/710.jpeg")
 #     im.rotate(45).show()
