@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <div class="house">
+<div class="container">
+  <div class="row">
+  <div class="col-xl">
       <!-- <h2>{{house.make}} {{house.model}} {{house.trim}}</h2> -->
       <h3>Address: {{house.address}}</h3>
       <h3>City: {{house.city}}</h3>
       <h3>State: {{house.state}}</h3>
-  </div>
+  
       {% if house.img_url %}
-      <img src="{{ house.img_url.url }}" alt="{{ house.address }}" width="30%">
+      <img src="{{ house.img_url.url }}" alt="{{ house.address }}" width="100%">
        {% endif %}
   <p>
     <a href="/house/{{house.id}}/edit"> Edit {{house.model}} </a>
@@ -16,8 +18,25 @@
   <form action="/house/{{house.id}}/delete" method="POST">
     {% csrf_token %}
     <input type="submit" value="Delete {{house.model}}">
+  
   </form>
-  <hr></hr>
+</div>
+<div class="col-md">
+  <b>Address:</b>{{house.address}}<br>
+  <b>City:</b>{{house.city}}<br>
+  <b>State:</b>{{house.state}}<br>
+  <b>Bedrooms:</b>{{house.bedrooms}}<br>
+  <b>Baths:</b>{{house.baths}}<br>
+  <b>Central Air:</b>{{house.ac}}<br>
+  <b>Forced Heat:</b>{{house.forcedheat}}<br>
+  <b>Current Rent:</b>{{house.currentrent}}<br>
+  <b>Rented? (Y/N):</b>{{house.rented}}<br>
+</div>
+
+</div>
+</div>
+  <hr></hr> 
+  
 {% endblock %}
 
 
