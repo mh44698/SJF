@@ -37,8 +37,7 @@ either flips or rents them, in a non-profit business model.
 | Buyers | This will show all Buyers who are currently looking for investment grade properites. | 
 | Sellers | This will show all Sellers that want to sell a house | 
 | Houses | This will show all houses owned by SJF | 
-| StockLosers | This will render the StockLosers for the day | 
-| Indexes | This will render the Indexes Performances | 
+
 
 
 <!-- ## Time Frames
