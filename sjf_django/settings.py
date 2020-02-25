@@ -16,10 +16,10 @@ import os
 
 #############################  AWS EDIT #########################
 # local
-from key import AWS_KEY, AWS_SECRET
+#from key import AWS_KEY, AWS_SECRET
 #heroku
-#AWS_KEY = os.environ['AWS_KEY']
-#AWS_SECRET = os.environ['AWS_SECRET']
+AWS_KEY = os.environ['AWS_KEY']
+AWS_SECRET = os.environ['AWS_SECRET']
 #############################  AWS EDIT #########################
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
